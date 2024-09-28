@@ -6,3 +6,7 @@ jobs:
       steps:
         - name: Display Some Text
           run: echo "Some Text"
+        - name: Comman №2
+          run: |
+            node -v
+            nmp -v
