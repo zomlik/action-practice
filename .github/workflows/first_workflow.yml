@@ -9,4 +9,4 @@ jobs:
         - name: Comman №2
           run: |
             node -v
-            nmp -v
+            npm -v
