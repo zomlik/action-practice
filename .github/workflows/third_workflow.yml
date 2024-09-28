@@ -4,7 +4,8 @@ jobs:
   run-first-command:
       runs-on: ubuntu-latest
       steps:
-        - name: Display pwd
-          run: |
-            pwd
-            ls -a
+        - name: Display list of files
+          run: ls -a
+        - uses: actions/checkout@v4
+        - name: List file
+          run: ls -a
