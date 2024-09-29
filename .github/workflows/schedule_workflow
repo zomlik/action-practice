@@ -1,0 +1,13 @@
+name: Schedule Workflow
+on:
+  schedule:
+    - cron: "* * * * *" # Every minute
+    
+jobs: 
+  run-first-command:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Event Vars
+          run: |
+            echo Last commit: $GITHUB_SHA
+            echo Default branch: $GITHUB_REF
