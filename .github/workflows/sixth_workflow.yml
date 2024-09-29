@@ -14,7 +14,7 @@ on:
   issues:
     types: [opened ,deleted]
   pull_request:
-    types: [opened, edited, ]
+    types: [opened, edited]
 jobs: 
   run-first-command:
       runs-on: ubuntu-latest
