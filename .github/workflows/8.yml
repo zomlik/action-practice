@@ -7,6 +7,20 @@ on:
         type: string
         required: true  
         default: "Hellow World!"
+      selectCustom:
+        description: Select Type
+        required: true
+        default: "Value 1"
+        type: choice
+        options:
+          - Value 1
+          - Value 2
+          - Value 3
+      checkBox:
+        description: Check Box
+        required: true
+        type: boolean
+
 jobs: 
   run-first-command:
       runs-on: ubuntu-latest
@@ -14,3 +28,5 @@ jobs:
         - name: Event Vars
           run: |
             echo "Title: ${{inputs.titleCustom}}"
+            echo "Choice is ${{inputs.selectCustom}}"
+            echo "Check Box is ${{inputs.checkBox}}"
