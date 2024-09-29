@@ -1,0 +1,25 @@
+name: Workflow Syntax
+on:
+  push:
+    branches:
+      - main
+      - "page/*" # page/style
+      - "page/**" # page/style/mail
+      - "!page/style"
+    #tags:
+     # - "v1.*"
+     # - "!v1"
+    paths:
+      "**.html"
+  issues:
+    types: [opened ,deleted]
+  pull_request:
+    types: [opened, edited, ]
+jobs: 
+  run-first-command:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Event Vars
+          run: |
+            echo Last commit: $GITHUB_SHA
+            echo Default branch: $GITHUB_REF
