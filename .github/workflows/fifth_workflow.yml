@@ -1,5 +1,9 @@
 name: Fifth Workflow
-on: [push, issues, pull_request]
+on:
+  issues:
+    types: [opened ,deleted]
+  pull_request:
+    types: [opened, edited, ]
 jobs: 
   run-first-command:
       runs-on: ubuntu-latest
