@@ -10,7 +10,7 @@ on:
      # - "v1.*"
      # - "!v1"
     paths:
-      "**.html"
+      - "**.html"
   issues:
     types: [opened ,deleted]
   pull_request:
