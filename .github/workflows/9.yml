@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Echo command
         run: |
-          echo ${{toJson(github)}}
-          echo ${{toJson(runner)}}
-          echo ${{toJson(job)}}
+          echo "${{toJson(github)}}"
+          echo "${{toJson(runner)}}"
+          echo "${{toJson(job)}}"
