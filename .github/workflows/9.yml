@@ -1,6 +1,6 @@
 name: GitHub Expression
 on: [push]
-
+run-name: "Contex Info"
 jobs:
   run-command:
     runs-on: ubuntu-latest
