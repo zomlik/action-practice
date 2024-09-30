@@ -1,0 +1,20 @@
+name: Vars
+on: push
+env: 
+  WF_CUSTOM_VAR: WF 1 
+jobs: 
+  run-first-command:
+      runs-on: ubuntu-latest
+      env:
+        JOB_CUSTUM_VAR: JOB 1
+      steps:
+        - name: Echo Vars
+          env:
+            STEP_CUSTOM_VAR: STEP 1
+          run: |
+            echo Default branch: $GITHUB_REF
+            echo "${{github.ref}}"
+            echo $WF_CUSTOM_VAR
+            echo "${{env.WF_CUSTOM_VAR}}"
+            echo $JOB_CUSTUM_VAR
+            echo $STEP_CUSTOM_VAR
