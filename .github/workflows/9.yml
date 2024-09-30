@@ -1,0 +1,12 @@
+name: GitHub Expression
+on: [push]
+
+jobs:
+  run-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo command
+        run: |
+          echo ${{toJson(github)}}
+          echo ${{toJson(runner)}}
+          echo ${{toJson(job)}}
