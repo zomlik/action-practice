@@ -1,0 +1,17 @@
+name: Python Env
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: "production"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python v3.12
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.12"
+      - name: Run Python Env File
+        env:
+            PASSWORD: ${{secrets.PASSWORD}}
+        run: python main.py 
