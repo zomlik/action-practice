@@ -1,0 +1,22 @@
+name: Status check functions
+on: push
+
+jobs:
+  # failure() success() always() cancelled()
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First Step
+        run: sleep 30
+      - name: Canceled
+        if: ${{cancelled()}}
+        run: echo "Runs on Cancelled"
+      - name: Always
+        if: ${{always()}}
+        run: echo "Runs on Always"
+      - name: Success
+        if: ${{success()}}
+        run: echo "Runs on Success"
+      - name: Failure
+        if: ${{failure()}}
+        run: echo "Rus on Failure"
