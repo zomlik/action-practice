@@ -1,3 +1,4 @@
 import os
-
-print(os.environ.get("PASSWORD"))
+os.environ["TEST"] = "MY ENV"
+print(os.environ["TEST"])
+print(os.environ["ALLURE_HOME"])
