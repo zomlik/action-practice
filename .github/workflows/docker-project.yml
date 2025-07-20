@@ -6,4 +6,6 @@ jobs:
       steps:
         - name: Clone git project 
           run: git clone https://github.com/taigaio/taiga-docker.git
+        - name: list
+          run: ls
             
