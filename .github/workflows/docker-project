@@ -1,0 +1,9 @@
+name: Docker project 
+on: workflow_dispatch
+jobs: 
+  build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Clone git project 
+          run: git clone https://github.com/taigaio/taiga-docker.git
+            
