@@ -6,6 +6,12 @@ jobs:
       steps:
         - name: Clone git project 
           run: git clone https://github.com/taigaio/taiga-docker.git
-        - name: list
-          run: ls
+        - name: Run scripts
+          run: |
+              cd taiga-docker/
+              git checkout stable
+              ./launch-all.sh
+              ./taiga-manage.sh createsuperuser
+        - name: Check work
+          run: curl -v http://localhost:9000        
             
