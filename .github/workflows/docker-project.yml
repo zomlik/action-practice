@@ -12,6 +12,5 @@ jobs:
               git checkout stable
               sed -i '/&default-back-environment/,/^$/!b;/^$/i \  PUBLIC_REGISTER_ENABLED: "True"' docker-compose.yml
               sed -i '/taiga-front:/,/environment:/!b;/environment:/a \      PUBLIC_REGISTER_ENABLED: "true"' docker-compose.yml
-        - name: Check docker-image
-          run: cat docker-compose.yml  
+              cat docker-compose.yml 
             
