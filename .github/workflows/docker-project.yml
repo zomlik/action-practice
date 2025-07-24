@@ -12,7 +12,7 @@ jobs:
               git checkout stable
               sed -i '/&default-back-environment/,/^$/!b;/^$/i \  PUBLIC_REGISTER_ENABLED: "True"' docker-compose.yml
               sed -i '/taiga-front:/,/TAIGA_SUBPATH:/!b;/TAIGA_SUBPATH:/a \      PUBLIC_REGISTER_ENABLED: "true"' docker-compose.yml
-              cat docker-compose.yml
+              ./launch-all.sh
         - name: Curl
           run: |
             curl http://localhost:9000/api/v1
