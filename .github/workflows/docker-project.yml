@@ -6,11 +6,6 @@ jobs:
       steps:
         - name: Clone git project 
           run: git clone https://github.com/taigaio/taiga-docker.git
-        - name: Set up Docker
-          run: |
-            docker-compose down
-            docker volume prune -f
-            
         - name: Run scripts
           run: |
               cd taiga-docker/
