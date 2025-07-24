@@ -19,5 +19,5 @@ jobs:
         - name: Curl 2
           run: curl http://localhost:9000
         - name: Curl 3
-          run: curl http://localhost:80/api/v1
+          run: curl http://localhost:9000/api/auth
           
