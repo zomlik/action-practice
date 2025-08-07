@@ -10,14 +10,16 @@ jobs:
           run: |
               cd taiga-docker/
               git checkout stable
-              ./launch-taiga.sh
+              docker-compose up
     
         - name: Curl
           run: |
-            curl http://localhost:9000/api/v1
-            curl -s -o /dev/null -w "%{http_code}" http://localhost:9000/api/v1
+            curl http://localhost:9000/api/v1/projects
+            curl -s -o /dev/null -w "%{http_code}" http://localhost:9000/api/v1/projects
         - name: Curl 2
-          run: curl http://localhost:9000
+          run: |
+            curl http://localhost:9000
         - name: Curl 3
-          run: curl http://localhost:9000/api/auth
+          run: |
+            curl http://localhost:9000/api/v1/auth
           
