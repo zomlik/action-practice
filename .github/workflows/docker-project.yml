@@ -15,13 +15,11 @@ jobs:
               sed -i '/taiga-front:/,/TAIGA_SUBPATH:/!b;/TAIGA_SUBPATH:/a \      PUBLIC_REGISTER_ENABLED: "true"' docker-compose.yml
               ./launch-all.sh
               timeout 60s bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://localhost:9000/api/v1/)" != "200" ]]; do sleep 2; done' || false
-              ./taiga-manage.sh createsuperuser 
-        - name: Curl
-          run: |
-            curl -X POST \
-            -H "Content-Type: application/json" \
-            -d '{"type": "normal", "username": "admin", "password": "123456"}' \
-              http://localhost:9000/api/v1/auth
+              ./taiga-manage.sh createsuperuser \
+              --username=admin \
+              --email=admin@example.com \
+              --password=admin \
+              --noinput
         - name: Curl
           run: |
             curl -X POST \
